@@ -1,0 +1,6 @@
+# Mouse    - /sys/bus/usb/devices/1-2/power/wakeup:disabled
+# ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b", ATTR{power/wakeup}="disabled"
+
+# Keyboard - /sys/bus/usb/devices/1-5/power/wakeup:disabled
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c548", ATTR{power/wakeup}="disabled"
+

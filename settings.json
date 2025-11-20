@@ -157,7 +157,36 @@
     },
     "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
     "lldb.launch.expressions": "native",
-    "python.languageServer": "None",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "go.useLanguageServer": true,
+
+    // Disable aggressive AI code block completions (Cursor's tab completion)
+    "cursor.tabCompletionEnabled": false,
+
+    // Disable inline AI suggestions (the gray text that appears)
+    "editor.inlineSuggest.enabled": false,
+
+    // Disable GitHub Copilot if installed
+    "github.copilot.enable": {
+        "*": false,
+        "python": false,
+        "go": false
+    },
+    "github.copilot.editor.enableAutoCompletions": false,
+
+    // KEEP ENABLED: Standard IntelliSense and language server completions
+    // These provide helpful small suggestions like variable names, pattern matching, etc.
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.parameterHints.enabled": true,
+
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "C_Cpp.copilotHover": "disabled"

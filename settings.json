@@ -1,0 +1,164 @@
+// VSCode settings
+
+{
+    "terminal.integrated.copyOnSelection": true,
+    "git.untrackedChanges": "hidden",
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.parameterHints.enable": false,
+    "editor.codeLens": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.semanticTokenColorCustomizations": {
+      "rules": {
+        "struct": "#ff7b00",
+        "builtinType": "#ff7b00",
+        "macro": "#ff7b00",
+        "property": "#bbc5d8",
+        "variable": "#bbc5d8",
+        "enum": "#bbc5d8",
+        "enumMember": "#bbc5d8",
+        "punctuation": "#bbc5d8",
+        "function": "#77c7bc",
+        "method": "#77c7bc",
+        "keyword": "#ae98d1",
+        "selfKeyword": "#ae98d1",
+        "constant": "#d19a66",
+        "string": "#ce9178",
+        "number": "#ce9178",
+        "comment": "#6a9955",
+        "escapeCharacter": "#e5c07b"
+      },
+    },
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            "entity.name.function.macro",
+            "meta.macro",
+            "support.function.macro",
+            "entity.name.function.preprocessor",
+          ],
+          "settings": {
+            "foreground": "#ff7b00"
+          }
+        },
+        {
+          "scope": "storage.type",
+          "settings": {
+            "foreground": "#ae98d1"
+          }
+        },
+        {
+          "scope": "constant.language",
+          "settings": {
+            "foreground": "#ae98d1"
+          }
+        },
+        {
+          "scope": "entity.name.function",
+          "settings": {
+            "foreground": "#77c7bc"
+          }
+        },
+        {
+          "scope": "variable",
+          "settings": {
+            "foreground": "#bbc5d8"
+          }
+        },
+        {
+          "scope": "entity.name.type",
+          "settings": {
+            "foreground": "#ff7b00"
+          }
+        },
+        {
+          "scope": "keyword",
+          "settings": {
+            "foreground": "#ae98d1"
+          }
+        },
+        {
+          "scope": "variable.language",
+          "settings": {
+            "foreground": "#ae98d1"
+          }
+        },
+        {
+          "scope": "constant",
+          "settings": {
+            "foreground": "#d19a66"
+          }
+        },
+        {
+          "scope": "string",
+          "settings": {
+            "foreground": "#ce9178"
+          }
+        },
+        {
+          "scope": "constant.numeric",
+          "settings": {
+            "foreground": "#ce9178"
+          }
+        },
+        {
+          "scope": "comment",
+          "settings": {
+            "foreground": "#6a9955"
+          }
+        },
+        {
+          "scope": "punctuation.definition.comment",
+          "settings": {
+            "foreground": "#6a9955"
+          }
+        },
+        {
+          "scope": "constant.character.escape",
+          "settings": {
+            "foreground": "#e5c07b"
+          }
+        },
+        {
+          "scope": "punctuation",
+          "settings": {
+            "foreground": "#bbc5d8"
+          }
+        },
+        {
+          "scope": "storage.modifier",
+          "settings": {
+            "foreground": "#ae98d1"
+          }
+        },
+        {
+          "scope": "entity.name.function",
+          "settings": {
+            "foreground": "#77c7bc"
+          }
+        },
+        {
+          "scope": "meta.function",
+          "settings": {
+            "foreground": "#77c7bc"
+          }
+        }
+      ]
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "python.createEnvironment.trigger": "off",
+    "go.lintFlags": [
+      "-err-capitalization"
+    ],
+    "editor.accessibilitySupport": "off",
+    "accessibility.signals.terminalCommandSucceeded": {
+      "announcement": "off",
+      "sound": "off"
+    },
+    "lldb.library": "/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "python.languageServer": "None",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "C_Cpp.copilotHover": "disabled"
+  }

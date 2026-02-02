@@ -11,8 +11,11 @@ alias vult='ssh -i ~/.ssh/ov tyler@CHANGEME'
 alias dc='cd'
 alias ref1='sudo reflector --country "United States" --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
 alias ref2='sudo pacman -Syy'
-alias vpnca='sudo wg-quick down us && sudo wg-quick up canada'
-alias vpnus='sudo wg-quick down canada && sudo wg-quick up us'
+alias resu='sudo resolvconf -u'
+alias caup='sudo wg-quick up ppc-ca-van'
+alias cadown='sudo wg-quick down ppc-ca-van'
+alias usup='sudo wg-quick up ppc-us-ca'
+alias usdown='sudo wg-quick down ppc-us-ca'
 
 # Local Dev Docker (uses docker-compose.override.yaml)
 alias dbuild='docker compose build'

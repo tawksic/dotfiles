@@ -1,0 +1,53 @@
+# This is missing a bunch of stuff I forgot to write down in the begining.. anyway.
+
+https://github.com/maxart/omarchy-cleaner
+
+$ sudo pacman -S wget
+$ sudo pacman -S bind
+$ sudo pacman -S uv
+$ sudo pacman -S go
+$ sudo pacman -S cursor-bin paru reflector protonup-qt go
+$ sudo pacman -S --needed nvidia-utils lib32-nvidia-utils lib32-libxcrypt-compat
+$ protonup-qt  # add new version proton GE
+$ sudo pacman -S libreoffice-fresh
+$ sudo pacman -S ttf-liberation ttf-dejavu noto-fonts
+$ sudo pacman -S proton-vpn-gtk-app
+$ sudo pacman -S proton-vpn-cli
+$ sudo pacman -S p7zip
+$ sudo pacman -S icoutils
+$ sudo pacman -S openvpn dialog python-pip python-setuptools
+$ sudo pacman -S wireguard-tools
+$ sudo pacman -S openresolv
+$ sudo pacman -S flatpak
+$ sudo pacman -S paru
+$ sudo pacman -S reflector
+$ sudo pacman -Rns fzf
+
+$ yay -S freetube-bin
+$ yay -S librewolf-bin
+
+
+omarchy-drive-set-password
+
+\# **Steam stuff**
+\# manually set proton-GE in the steam launch options
+\# Deadlock launch options
+`DXVK_ASYNC=1 VKD3D_DEBUG=none %command%
+\# Elden Ring launch options
+`unset SDL_VIDEODRIVER; %command%`
+$ wget https://github.com/youp211/ERSC-Updater-Linux/blob/main/ersc-update.sh
+
+\# **Apps**
+IDE -> settings -> search for files.exclude -> ignore all the bullshit like __pycache__
+Obsidian -> settings -> editor -> toggle off readable line length
+Claude:
+$ git clone https://github.com/aaddrick/claude-desktop-debian.git
+$  cd claude-desktop-debian
+$  ./build.sh --build appimage
+$  flatpak install flathub it.mijorus.gearlever
+$  flatpak run it.mijorus.gearlever
+$  cp ./claude-desktop-1.1.799-amd64.AppImage ~/Downloads/
+$  flatpak run it.mijorus.gearlever # drag it
+
+\# Get a vpn config from you know how
+$ sudo systemctl enable wg-quick@us

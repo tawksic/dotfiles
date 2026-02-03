@@ -10,6 +10,6 @@ max-icon-size=32
 outer-margin=20
 
 
-# Tyler Custom
-output=DP-3
+# Monitor output
+output={{MAKO_OUTPUT}}
 anchor=top-left

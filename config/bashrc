@@ -7,15 +7,15 @@ source ~/.local/share/omarchy/default/bash/rc
 bind -f ~/.inputrc
 
 alias ll='ls -alh'
-alias vult='ssh -i ~/.ssh/ov tyler@CHANGEME'
+alias vult='ssh -i {{SSH_KEY}} {{SSH_USER}}@{{SSH_HOST}}'
 alias dc='cd'
 alias ref1='sudo reflector --country "United States" --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
 alias ref2='sudo pacman -Syy'
 alias resu='sudo resolvconf -u'
-alias caup='sudo wg-quick up ppc-ca-van'
-alias cadown='sudo wg-quick down ppc-ca-van'
-alias usup='sudo wg-quick up ppc-us-ca'
-alias usdown='sudo wg-quick down ppc-us-ca'
+alias caup='sudo wg-quick up {{VPN_CA}}'
+alias cadown='sudo wg-quick down {{VPN_CA}}'
+alias usup='sudo wg-quick up {{VPN_US}}'
+alias usdown='sudo wg-quick down {{VPN_US}}'
 
 # Local Dev Docker (uses docker-compose.override.yaml)
 alias dbuild='docker compose build'

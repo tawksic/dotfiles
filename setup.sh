@@ -125,29 +125,30 @@ echo ""
 info "Installing pacman packages..."
 
 pacman_packages=(
-    wget
+    archlinux-keyring
     bind
-    uv
-    go
     cursor-bin
-    paru
-    reflector
-    protonup-qt
-    libreoffice-fresh
-    ttf-liberation
-    ttf-dejavu
-    noto-fonts
-    p7zip
-    icoutils
-    openvpn
     dialog
+    flatpak
+    go
+    icoutils
+    libreoffice-fresh
+    noto-fonts
+    openvpn
+    p7zip
+    paru
+    proton-vpn-cli
+    proton-vpn-gtk-app
+    protonup-qt
     python-pip
     python-setuptools
+    reflector
+    systemd-resolvconf
+    ttf-dejavu
+    ttf-liberation
+    uv
+    wget
     wireguard-tools
-    openresolv
-    flatpak
-    proton-vpn-gtk-app
-    proton-vpn-cli
 )
 
 if [[ "$do_nvidia" == "y" ]]; then

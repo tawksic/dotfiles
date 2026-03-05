@@ -148,6 +148,7 @@ pacman_packages=(
     ttf-liberation
     uv
     wget
+    wine
     wireguard-tools
 )
 
@@ -169,7 +170,7 @@ else
 fi
 
 if [[ -n "$aur_helper" ]]; then
-    aur_packages=(freetube-bin librewolf-bin)
+    aur_packages=(librewolf-bin proton-ge-custom-bin vesktop-bin)
     $aur_helper -S --needed --noconfirm "${aur_packages[@]}" || warn "Some AUR packages may have failed."
 fi
 

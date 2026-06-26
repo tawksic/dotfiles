@@ -11,13 +11,12 @@ alias vult='ssh -i {{SSH_KEY}} {{SSH_USER}}@{{SSH_HOST}}'
 alias dc='cd'
 alias ref1='sudo reflector --country "United States" --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
 alias ref2='sudo pacman -Syy'
-alias resu='sudo resolvconf -u'
 alias usup='sudo wg-quick down {{VPN_CA}} 2>/dev/null; sudo wg-quick up {{VPN_US}}'
 alias caup='sudo wg-quick down {{VPN_US}} 2>/dev/null; sudo wg-quick up {{VPN_CA}}'
 alias alldown='sudo wg-quick down {{VPN_US}} 2>/dev/null; sudo wg-quick down {{VPN_CA}} 2>/dev/null'
 alias steam='SDL_GAMECONTROLLERCONFIG="" steam &'
-alias wowoff="sed -i 's/^  # kb_options = ctrl:swap/  kb_options = ctrl:swap/' ~/.config/hypr/input.conf && hyprctl reload"
-alias wowon="sed -i 's/^  kb_options = ctrl:swap/  # kb_options = ctrl:swap/' ~/.config/hypr/input.conf && hyprctl reload"
+alias swapoff="sed -i 's/^  # kb_options = ctrl:swap/  kb_options = ctrl:swap/' ~/.config/hypr/input.conf && hyprctl reload"
+alias swapon="sed -i 's/^  kb_options = ctrl:swap/  # kb_options = ctrl:swap/' ~/.config/hypr/input.conf && hyprctl reload"
 
 # Local Dev Docker (uses docker-compose.override.yaml)
 alias dbuild='docker compose build'
@@ -27,3 +26,5 @@ alias dlogs='docker compose logs api'
 alias dlogsf='docker compose logs -f api'
 alias dps='docker compose ps'
 
+# Paths
+export PATH=$PATH:$HOME/go/bin

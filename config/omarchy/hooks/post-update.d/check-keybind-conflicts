@@ -1,0 +1,48 @@
+#!/bin/bash
+# Checks whether Omarchy's default keybindings changed since the last update,
+# and if so, notifies so bindings.lua overrides can be reviewed against them.
+# Runs automatically via `omarchy-hook post-update` (called by `omarchy update`).
+
+set -euo pipefail
+
+DEFAULTS_DIR="/usr/share/omarchy/default/hypr/bindings"
+BASELINE_DIR="$HOME/.local/state/omarchy/keybind-baseline"
+LOG_FILE="$HOME/.local/state/omarchy/keybind-conflict-check.log"
+
+mkdir -p "$(dirname "$LOG_FILE")"
+
+update_baseline() {
+    rm -rf "$BASELINE_DIR"
+    mkdir -p "$BASELINE_DIR"
+    cp -r "$DEFAULTS_DIR"/. "$BASELINE_DIR/"
+}
+
+# First run: nothing to compare against yet, just capture the starting point.
+if [[ ! -d "$BASELINE_DIR" ]]; then
+    update_baseline
+    exit 0
+fi
+
+if diff -rq "$BASELINE_DIR" "$DEFAULTS_DIR" >/dev/null 2>&1; then
+    exit 0
+fi
+
+my_keys=$(grep -ohE '"[A-Z][A-Z0-9 +._:-]*"' "$HOME/.config/hypr/bindings.lua" 2>/dev/null | grep -v ' "$' | sort -u)
+
+{
+    echo "Omarchy's default keybindings changed on the last update ($(date))."
+    echo ""
+    echo "Diff against the previous defaults:"
+    diff -r "$BASELINE_DIR" "$DEFAULTS_DIR" || true
+    echo ""
+    echo "Your bindings.lua touches these keys -- worth a quick check against"
+    echo "the diff above, and against: omarchy menu keybindings --print"
+    echo ""
+    echo "$my_keys"
+} > "$LOG_FILE"
+
+omarchy-notification-send "Omarchy keybindings changed" \
+    "Review ~/.local/state/omarchy/keybind-conflict-check.log" \
+    -u normal || true
+
+update_baseline

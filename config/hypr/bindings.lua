@@ -23,6 +23,10 @@ o.bind("SUPER + S", "Screenshot", "omarchy-capture-screenshot region copy")
 hl.unbind("SUPER + SHIFT + S")
 o.bind("SUPER + SHIFT + S", "Screenshot (edit)", "bash -c 'f=$(omarchy-capture-screenshot region save); [ -n \"$f\" ] && tensaku-edit \"$f\"'")
 
+-- Too easy to hit by accident (cycles workspace into scrolling/floating + dock)
+hl.unbind("SUPER + L")
+hl.unbind("SUPER + ALT + L")
+
 -- Don't use X/Twitter
 hl.unbind("SUPER + SHIFT + X")
 

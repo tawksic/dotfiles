@@ -46,10 +46,11 @@ o.bind("SUPER + Y", "YouTube", { webapp = "https://youtube.com/" })
 -- Push to mute (Wayland doesn't support global hotkeys for raw input)
 o.bind("SUPER + Z", "Push to mute", "pactl set-source-mute @DEFAULT_SOURCE@ toggle")
 
--- Numpad workspace switching (parallel to the SUPER+1-9,0 top-row defaults)
+-- Numpad workspace switching (parallel to the SUPER+1-9,0 top-row defaults).
+-- Per-monitor like the defaults: numpad N goes to workspace N of the focused monitor.
 local numpad_workspaces = { [87] = 1, [88] = 2, [89] = 3, [83] = 4, [84] = 5 }
 for code, workspace in pairs(numpad_workspaces) do
   local key = "code:" .. tostring(code)
-  o.bind("SUPER + " .. key, "Switch to workspace " .. workspace, hl.dsp.focus({ workspace = tostring(workspace) }))
-  o.bind("SUPER + SHIFT + " .. key, "Move window to workspace " .. workspace, hl.dsp.window.move({ workspace = tostring(workspace) }))
+  o.bind("SUPER + " .. key, "Switch to workspace " .. workspace, o.workspaces.focus(workspace))
+  o.bind("SUPER + SHIFT + " .. key, "Move window to workspace " .. workspace, o.workspaces.move_window(workspace))
 end
